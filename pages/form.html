@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Order form</title>
+</head>
+<body>
+        <section class="contact">
+            <h2>Order form</h2>
+            <form id="contactForm">
+                <div class="input-box">
+                    <div class="input-field field">
+                    <input type="text" name="user_name" placeholder="Namn" id="name" class="item" autocomplete="off" minlength="2" maxlength="50" required>
+                    <div class="error-txt">Namn kan inte vara blank</div>
+                    </div>
+                    <div class="input-field field">
+                    <input type="email" name="email" placeholder="E-post" id="email" class="item" autocomplete="off" maxlength="50" required>
+                    <div class="error-txt email">E-post kan inte vara blank</div>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <div class="input-field field">
+                    <input type="tel" name="user_phone" placeholder="Telefonnummer" id="number" class="item" autocomplete="off" pattern="[0-9\s\-\(\)]+" maxlength="20" required>
+                    <div class="error-txt">Telefonnummer kan inte vara blank</div>
+                    </div>
+                    <div class="input-field field">
+                    <input type="text" name="gatuadress" placeholder="Gatuadress" id="address" class="item" autocomplete="off" minlength="2" maxlength="50" required>
+                    <div class="error-txt">Gatuadress kan inte vara blank</div>
+                    </div>
+                    <div class="input-field field">
+                    <input type="text" name="postnummer" placeholder="Postnummer" id="postalCode" class="item" autocomplete="off" pattern="[0-9]{5}" required>
+                    <div class="error-txt">Postnummer kan inte vara blank</div>
+                    </div>
+                    <div class="input-field field">
+                    <input type="text" name="postort" placeholder="Postort" id="city" class="item" autocomplete="off" minlength="2" maxlength="50" required>
+                    <div class="error-txt">Postort kan inte vara blank</div>
+                    </div>
+                </div>
+                <button type="submit"><i class='bxr bx-paper-plane'></i>Skicka</button>
+                </form>
+        </section>
+        <script src="../scripts/form.js"></script>
+    
+</body>
+</html>
