@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Varela:regular);
 :root {
-    --color-background: #ff9900;
-    --color-backgound-hover: #ff7f00;
+    --color-background: #3b82f6;
+    --color-backgound-hover: #2563eb;
 }
 * {
   margin: 0;
@@ -122,4 +122,42 @@ body {
 
 .product button:hover{
     background-color: var(--color-background-hover); 
+}
+
+/* progress bar */
+.progress-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    width: 0%;
+    z-index: 100;
+    transition: width 0.1s;
+}
+.badge {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #111;
+    border: 1px solid #222;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #6366f1;
+    z-index: 100;
+    transition: all 0.2s ease;
+}
+.badge.complete {
+    background: #6366f1;
+    color: #fff;
+    border-color: #6366f1;
+}
+.content {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 80px 24px;
+
 }

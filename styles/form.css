@@ -1,6 +1,6 @@
 :root {
-    --color-background: #000000;
-    --color-text: white;
+    --color-background: #0f172a;
+    --color-text: #3b82f6;
     --font: Arial, Helvetica, sans-serif;
 }
 
@@ -69,7 +69,7 @@ form .input-box {
 }
 
 .input-field input:focus {
-    border-color: #666;
+    border-color: #3b82f6;
 }
 
 .field.error input,
@@ -92,7 +92,7 @@ form .input-box {
 button[type="submit"] {
     width: 100%;
     padding: 15px;
-    background: white;
+    background: #3b82f6;
     color: black;
     border: none;
     border-radius: 8px;
@@ -107,7 +107,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background: #e0e0e0;
+    background: #2563eb;
 }
 
 button[type="submit"] i {
