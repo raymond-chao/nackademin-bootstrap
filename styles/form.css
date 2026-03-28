@@ -59,7 +59,7 @@ form .input-box {
     width: 100%;
     padding: 15px;
     font-size: 16px;
-    color: var(--color-text);
+    color: white;
     background: #1a1a1a;
     border: 2px solid #333;
     border-radius: 8px;

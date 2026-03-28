@@ -6,14 +6,12 @@ window.onload = function() {
 };
 
 function loadCart() {
-    // Hämta från URL-parametrar
     const params = new URLSearchParams(window.location.search);
     const cartData = params.get('cart');
     
     if (cartData) {
         cart = JSON.parse(cartData);
-    } else {
-        // Eller hämta från localStorage om ingen URL-data
+    } else { //hämtar vi från localstorage
         const savedCart = localStorage.getItem('cart');
         if (savedCart) {
             cart = JSON.parse(savedCart);
@@ -27,10 +25,9 @@ function displayCart() {
     const cartSummary = document.getElementById('cartSummary');
     const itemCount = document.getElementById('itemCount');
     
-    // Töm container
     cartItemsContainer.innerHTML = '';
     
-    // Kolla om cart är tom
+    // kolla om cart är tom
     if (cart.length === 0) {
         emptyCartDiv.style.display = 'block';
         cartSummary.style.display = 'none';
@@ -46,7 +43,7 @@ function displayCart() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     itemCount.textContent = `${totalItems} item${totalItems !== 1 ? 's' : ''}`;
     
-    // Rendera varje produkt
+    // visa varje produkt
     cart.forEach((item, index) => {
         const cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
