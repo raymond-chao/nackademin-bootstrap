@@ -11,7 +11,7 @@ function loadCart() {
     
     if (cartData) {
         cart = JSON.parse(cartData);
-    } else { //hämtar vi från localstorage
+    } else {
         const savedCart = localStorage.getItem('cart');
         if (savedCart) {
             cart = JSON.parse(savedCart);
@@ -35,7 +35,6 @@ function displayCart() {
         return;
     }
     
-    // Dölj tom-meddelande och visa summary
     emptyCartDiv.style.display = 'none';
     cartSummary.style.display = 'block';
     
@@ -49,7 +48,7 @@ function displayCart() {
         cartItem.classList.add('cart-item');
         
         cartItem.innerHTML = `
-            <img src="${item.image}" alt="${item.title}" />
+            <img src="${item.thumbnail}" alt="${item.title}" />
             <div class="item-info">
                 <h3>${item.title}</h3>
                 <p class="item-price">$${item.price.toFixed(2)}</p>

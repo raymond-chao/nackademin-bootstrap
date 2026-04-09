@@ -20,12 +20,18 @@ function updateProgressBar() {
 
 window.addEventListener('scroll', updateProgressBar);
 
-function fetchProducts(){
+function fetchProducts() {
+    fetch('https://dummyjson.com/products')
+        .then(response => response.json())
+        .then(data => displayProducts(data.products))
+        .catch(error => console.error('Error fetching the products', error));
+}
+/*function fetchProducts(){
     fetch('https://fakestoreapi.com/products')
     .then(response => response.json())
     .then(data => displayProducts(data))
     .catch(error => console.error('Error fetching the products', error));
-}
+} */
 
 function displayProducts(products) {
     const productList = document.getElementById('productList');
@@ -36,10 +42,10 @@ function displayProducts(products) {
         productDiv.classList.add('product');
 
         productDiv.innerHTML = `
-            <img src="${product.image}" alt="${product.title}">
+            <img src="${product.thumbnail}" alt="${product.title}">
             <h3>${product.title}</h3>
             <p>$ ${product.price}</p>
-            <button onclick="orderProduct('${product.title}', ${product.price}, '${product.image}')">
+            <button onclick="orderProduct('${product.title}', ${product.price}, '${product.thumbnail}')">
                 Add to cart
             </button>
         `;
@@ -48,12 +54,12 @@ function displayProducts(products) {
     });
 }
 
-function orderProduct(title, price, image) {
+function orderProduct(title, price, thumbnail) {
     const exists = cart.find(item => item.title === title);
     if (exists) {
         exists.quantity++;
     } else {
-        cart.push({ title, price, image, quantity: 1 });
+        cart.push({ title, price, thumbnail, quantity: 1 });
     }
     updateCart();
     localStorage.setItem('cart', JSON.stringify(cart));
