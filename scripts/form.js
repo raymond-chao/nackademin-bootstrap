@@ -10,7 +10,7 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
     
     if (validateForm()) {
-        console.log('Form is valid - ready to submit');
+        console.log('Form är giltig');
         order();
     }
 });
