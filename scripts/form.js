@@ -1,4 +1,3 @@
-// Form validation script
 const form = document.getElementById('contactForm');
 const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
@@ -77,7 +76,6 @@ function validateName(value) {
     }
     return { valid: true };
 }
-
 function validateEmail(value) {
     if (value === '') {
         return { valid: false, message: 'E-post kan inte vara blank' };
@@ -96,7 +94,6 @@ function validatePhone(value) {
     if (value === '') {
         return { valid: false, message: 'Telefonnummer kan inte vara blankt' };
     }
-    // Remove spaces and dashes for validation
     const cleanPhone = value.replace(/[\s\-\(\)]/g, '');
     if (!/^[0-9]+$/.test(cleanPhone)) {
         return { valid: false, message: 'Telefonnummer kan endast innehålla siffror' };
@@ -124,7 +121,6 @@ function validatePostalCode(value) {
     if (value === '') {
         return { valid: false, message: 'Postnummer kan inte vara blankt' };
     }
-    // Swedish postal code format: 5 digits
     const cleanPostal = value.replace(/\s/g, '');
     if (!/^[0-9]{5}$/.test(cleanPostal)) {
         return { valid: false, message: 'Postnummer måste vara 5 siffror (t.ex. 42244)' };
@@ -163,7 +159,6 @@ function order() {
     };
     
     console.log('Order submitted:', formData);
-    
     alert('Beställning mottagen! Tack för din order.');
     form.reset();
 }
